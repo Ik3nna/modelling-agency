@@ -43,6 +43,5 @@ I learnt how to use the animation on scroll effect.
 
 ## Acknowledgments
 
-I would love to appreciate frontend mentor for providing the files used in the development of this project and also for the opportunity to practice and improve my skills and expertise.
-
+Shout out to @slimfit_zee on twitter for this beautiful design 
 
