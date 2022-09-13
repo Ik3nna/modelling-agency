@@ -1,0 +1,677 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --activeLinks: #805A4E;
+    --links: #888888;
+    --backgroundOne: #F9F9F9;
+    --mainTest: #212121;
+    --text: #333333;
+    --buttonBackground: #805A4E;
+    --buttonText: #FDFDFD;
+    --backgroundTwo: #ffffff;
+    --history: #444444;
+    --agency: #212121;
+    --agencyText: #333333;
+    --contact: #1B1B1B;
+    --footerBg: #212121;
+    --footerText: #FDFDFD;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Merriweather', serif;
+}
+header {
+    background-color: var(--backgroundOne);
+    padding: 20px;
+}
+header .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    max-width: 113px;
+    width: 90%;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-top: -5px;
+}
+nav a {
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-right: 30px;
+    color: var(--links);
+    line-height: 32px;
+}
+nav a:hover {
+    color: var(--activeLinks);
+}
+nav .active {
+    color: var(--activeLinks);
+}
+nav .active:hover {
+    color: var(--links);
+}
+
+
+/* Hamburger menu */
+.overlay {
+    display: none;
+}
+.hamburger-menu {
+    display: none;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+.hamburger-menu .bar {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: var(--buttonBackground);
+    border-radius: 3px;
+    transition: 1s;
+}
+.bar::before, .bar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--buttonBackground);
+    border-radius: 3px;
+}
+.bar:before {
+    transform: translateY(-8px);
+    transition: 0.7s;
+}
+.bar::after {
+    transform: translateY(8px);
+    transition: 0.5s;
+}
+.active .hamburger-menu .bar {
+    transform: translateX(0) rotate(180deg);
+    background-color: transparent;
+}
+.active .bar::before {
+    transform: translateY(0) rotate(-405deg);
+}
+.active .bar::after {
+    transform: translateY(0) rotate(405deg);
+}
+
+
+
+/* Header Section */
+
+header section {
+    margin-top: 10px;
+}
+section .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10%;
+}
+section .content {
+    margin-top: 50px;
+}
+section .top {
+    font-style: italic;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+section .top span {
+    margin-right: 10px;
+    color: var(--buttonBackground);
+}
+section .main-text {
+    text-transform: capitalize;
+    font-size: 50px;
+    color: var(--mainTest);
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 80%;
+}
+.content p {
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 30px;
+    max-width: 450px;
+    width: 90%;
+}
+.btns {
+    background-color: var(--buttonBackground);
+    color: var(--buttonText);
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+.btns:hover {
+    transform: scale(1.1);
+}
+section .images {
+    display: flex;
+    position: relative;
+}
+.bg-1, .bg-2 {
+    width: 50%;
+}
+.bg-1 {
+    transform: translateY(50%);
+}
+.mainImg .one {
+    position: absolute;
+    top: -3%;
+    right: 2%;
+    width: 50%;
+}
+.mainImg .two {
+    position: absolute;
+    top: 53%;
+    left: 2%;
+    width: 50%;
+}
+
+
+/* About us section, part of the blogs section and apply section */
+#about, #blogs {
+    background-color: var(--backgroundTwo);
+}
+#about .container, #blogs .container, #apply .container, #contact h1 {
+    width: 90%;
+    margin: auto auto 50px;
+    align-items: center;
+    justify-content: center;
+}
+#about .about-content, #blogs .blogs-content, #apply .apply-content {
+    margin-top: 50px;
+}
+#about .image, #blogs .main {
+    margin-top: 30px;
+}
+#about .image img, #blogs .image .main {
+    max-width: 500px;
+    width: 80%;
+}
+.history, .discover, .apply {
+    text-transform: uppercase;
+    color: var(--history);
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+hr {
+    background-color: var(--buttonBackground);
+}
+.history hr, .discover hr, .apply hr{
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 90px;
+}
+.agency, .blogs, .model {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.about-details, .blogs-details, .apply-details {
+    color: var(--agencyText);
+    line-height: 2;
+    margin: 30px 0;
+}
+
+
+/* Talents section */
+#talents .container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+.circle1, .circle2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--buttonBackground);
+}
+#talents .topTier {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.topTier .text {
+    color: var(--backgroundTwo);
+    text-transform: uppercase;
+    margin: 0 5px;
+}
+#talents .more {
+    text-decoration: none;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+}
+#talents .container img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+/* Blogs section */
+#blogs .image {
+    position: relative;
+}
+.overlaying-images {
+    position: absolute;
+    top: 30px;
+    display: grid;
+    grid-template-rows: repeat(3);
+    width: 90%;
+}
+.overlaying-images img {
+    width: 27.33%;
+    max-width: 153.6px;
+}
+
+
+/* Apply section */
+#apply {
+    background-color: var(--backgroundOne);
+}
+.apply-content .apply {
+    font-size: 14px;
+}
+#apply .image {
+    position: relative;
+}
+#apply .og {
+    margin-right: 20px;
+    width: 50%;
+}
+#apply .bkup {
+    position: absolute;
+    right: 0;
+    width: 50%;
+}
+
+
+/* Contact section */
+#contact {
+    margin-bottom: 100px;
+}
+#contact .container {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+#contact h1 {
+    margin-bottom: 30px;
+}
+#contact p {
+    line-height: 2;
+    color: var(--contact);
+}
+#contact input {
+    padding: 10px;
+    margin-right: 20px;
+    width: 300px;
+    border: 1px solid var(--agencyText);
+}
+.text-area {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+/* Pre-footer section */
+#pre-footer {
+    background-color: var(--footerBg);
+    color: var(--buttonText);
+    padding: 40px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pre-footer .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+#pre-footer ul {
+    list-style: none;
+}
+#pre-footer li {
+    margin-bottom: 15px;
+}
+#pre-footer h2, #pre-footer .logo {
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+#pre-footer p {
+    line-height: 1.5;
+    max-width: 300px;
+}
+#pre-footer p:last-child {
+    margin-top: 20px;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--buttonBackground);
+    color: var(--buttonText);
+    padding: 10px;
+    font-size: 13px;
+}
+footer .container {
+    width: 90%;
+    margin: auto;
+}
+
+
+@media (min-width: 1200px) {
+    header section {
+        margin-top: 3%;
+    }
+    section .container {
+        margin-bottom: 13%;
+    }
+    section .main-text {
+        font-weight: 60px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .logo {
+        max-width: 103px;
+        width: 90%;
+    }
+    section .main-text {
+        font-size: 40px;
+    }
+    .history {
+        margin-bottom: 10px;
+    }
+    .agency {
+        font-size: 20px;
+    }
+    .about-details {
+        line-height: 1.6;
+        margin: 20px 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo {
+        max-width: 93px;
+        width: 90%;
+    }
+    nav a {
+        margin-right: 20px;
+    }
+    section .container {
+        margin-bottom: 8%;
+    }
+    section .main-text {
+        font-size: 30px;
+    }
+    .history {
+        margin-bottom: 10px;
+    }
+    .agency {
+        font-size: 20px;
+    }
+    .about-details {
+        line-height: 1.5;
+        margin: 20px 0;
+    }
+    #about .image img {
+        max-width: 500px;
+        width: 80%;
+    }
+    #apply .btns {
+        margin-bottom: 10px;
+    }
+    #pre-footer p {
+        line-height: 1.5;
+        max-width: 200px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 767px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .active .hamburger-menu {
+        position: fixed;
+        right: 50px;
+    }
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        max-width: 450px;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        background-color: var(--footerBg);
+        transform: translateX(100%);
+    }
+    nav ul {
+        flex-direction: column;
+        margin: 60px 0 0 30px;
+    }
+    nav li {
+        margin-bottom: 30px;
+    }
+    nav a {
+        color: var(--buttonText);
+        font-size: 25px;
+    }
+    .active nav {
+        transform: translateX(0);
+    }
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--links);
+        opacity: 0;
+        pointer-events: none;
+    }
+    .active .overlay {
+        opacity: 0.5;
+        pointer-events: all;
+    }
+
+
+/* Header section */
+    section .container {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+    header .images {
+        grid-row: 1;
+        margin: 60px 0;
+    }
+    header .content {
+        text-align: center;
+    }
+    section .content {
+        margin-top: 30%;
+    }
+    section .main-text {
+        width: 100%;
+    }
+    .content p {
+        max-width: 100%;
+        width: 100%;
+    }
+   
+
+/* About us section, part of the blogs section and apply section */
+#about .image, #blogs .main {
+    margin-top: 30px;
+}
+#about .image img, #blogs .image .main {
+    max-width: 70%;
+    width: 70%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+.about-content, .blogs-content, .apply-content {
+    text-align: center;
+}
+.history hr, .discover hr, .apply hr{
+    width: 35%;
+    position: none;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.agency, .blogs, .model {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 10px auto;
+}
+
+
+/* Talents section */
+#talents {
+    margin-top: 30px;
+    font-size: 14px;
+}
+#talents .container {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+.circle1, .circle2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--buttonBackground);
+}
+#talents .topTier {
+    top: 5%;
+}
+.topTier .text {
+    width: 100%;
+    position: relative;
+    min-width: 130px;
+    margin: auto;
+}
+
+#talents .container img {
+    margin-top: 0;
+}
+
+
+/* Blogs section */
+#blogs {
+    margin-top: 10px;
+}
+.overlaying-images {
+    left: 15%;
+    grid-template-rows: repeat(3);
+    width: 70%;
+}
+.overlaying-images img {
+    width: 30.8%;
+    max-width: 40%;
+}
+
+
+/* Apply section */
+#apply .image {
+    grid-row: 1;
+}
+#apply .og {
+    width: 40%;
+    position: relative;
+    transform: translateX(-15%);
+    left: 15%;
+}
+#apply .bkup {
+    position: absolute;
+    right: 0;
+    width: 40%;
+    transform: translateX(-10%);
+    right: 10%;
+}
+#apply .btns {
+    margin-bottom: 20px;
+}
+
+
+/* Contacts section */
+#contact .text-area {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr);
+}
+#contact input {
+    padding: 10px 50px;
+    margin: auto;
+    width: 100%;
+}
+#contact .btns {
+    margin-top: 20px;
+}
+
+
+/* Pre-footer section */
+#pre-footer .container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+}
+#pre-footer h2, #pre-footer .logo {
+    margin: 40px 0 20px;
+}
+#pre-footer p {
+    line-height: 1.5;
+    max-width: 100%;
+    font-size: 14px;
+}
+
+
+/* Footer section */
+footer .container {
+    text-align: center;
+}
+
+}
